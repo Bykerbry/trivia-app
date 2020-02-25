@@ -1,2 +1,35 @@
-<p>question works!</p>
-<p>Does it?</p>
+<div class="wrapper">
+    <div class="category">
+        <label class="dropdown">
+            <div class="dropdownBtn">
+                Categories
+            </div>
+            <input type="checkbox" class="dropdownInput" id="test">
+            <ul class="dropdownMenu">
+              <li>History</li>
+              <li>Sports</li>
+              <li>Animals</li>
+              <li>Video Games</li>
+            </ul>
+          </label>
+          <label class="dropdown">
+            <div class="dropdownBtn">
+                Difficulty
+            </div>
+            <input type="checkbox" class="dropdownInput" id="test">
+            <ul class="dropdownMenu">
+              <li>Easy</li>
+              <li>Medium</li>
+              <li>Hard</li>
+            </ul>
+          </label>
+    </div>
+
+    <div class="question">
+        <h2>Question: {{something.question}}</h2>
+        <h3>here {{question.question}}</h3>
+    </div>
+    <div class="score">
+        <span class="current">0/10</span>
+    </div>
+</div>
