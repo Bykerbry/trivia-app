@@ -5,29 +5,29 @@
                 Categories
             </div>
             <input type="checkbox" class="dropdownInput" id="test">
-            <ul class="dropdownMenu">
-              <li>History</li>
-              <li>Sports</li>
-              <li>Animals</li>
-              <li>Video Games</li>
-            </ul>
+            <select [(ngModel)]="category" (change)="selectCategory()" class="dropdownMenu">
+              <option value="history">History</option>
+              <option value="sports">Sports</option>
+              <option value="animals">Animals</option>
+              <option value="videoGames">Video Games</option>
+            </select>
           </label>
           <label class="dropdown">
             <div class="dropdownBtn">
                 Difficulty
             </div>
             <input type="checkbox" class="dropdownInput" id="test">
-            <ul class="dropdownMenu">
-              <li>Easy</li>
-              <li>Medium</li>
-              <li>Hard</li>
-            </ul>
+            <select class="dropdownMenu" [(ngModel)]="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select >
           </label>
     </div>
 
     <div class="question">
-        <h2>Question: {{something.question}}</h2>
-        <h3>here {{question.question}}</h3>
+        <h2>Question: {{}}</h2>
+        <h3>here {{}}</h3>
     </div>
     <div class="score">
         <span class="current">0/10</span>
