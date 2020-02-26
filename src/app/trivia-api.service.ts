@@ -42,10 +42,10 @@ export class TriviaApiService {
   }
 
   categories = {
-    history: 23,
-    sports: 21,
-    animals: 27,
-    videoGames: 15
+    history: "23",
+    sports: "21",
+    animals: "27",
+    videoGames: "15"
   }
 
   difficulty = {

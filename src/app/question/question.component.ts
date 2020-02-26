@@ -20,8 +20,8 @@ export class QuestionComponent implements OnInit {
 
   constructor(private TriviaApiService: TriviaApiService) { }
 
-  category : string = 'history';
-  difficulty : string = 'easy';
+  category : string;
+  difficulty : string;
   onSelectCategory : any;
   onSelectDifficulty : any;
   
@@ -29,11 +29,11 @@ export class QuestionComponent implements OnInit {
   }
 
   selectCategory() {
-    this.onSelectCategory.emit(this.category)
+    this.onSelectCategory.emit(this.category);
   }
 
   selectDifficulty() {
-    this.onSelectDifficulty.emit(this.difficulty)
+    this.onSelectDifficulty.emit(this.difficulty);
 
   }
 }
