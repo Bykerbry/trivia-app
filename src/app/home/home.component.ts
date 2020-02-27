@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TriviaApiService } from '../trivia-api.service';
 
 @Component({
@@ -12,10 +12,14 @@ export class HomeComponent implements OnInit {
 
   quizSetup: boolean = true;
   quizReady: boolean = false;
-  category: string = 'history';
-  difficulty: string = 'easy';
+  category: string;
+  difficulty: string;
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
+  
+  @Input() questions: any;
+  @Input() correctAnswers: any;
+  @Input() incorrectAnswers: any;
 
   ngOnInit() {
   }
@@ -25,6 +29,15 @@ export class HomeComponent implements OnInit {
     this.quizReady = true;
     this.quizSetup = false;
     return
+  }
+  setCategory(category) {
+    this.category = category;
+    console.log(category);
+  }
+
+  setDifficulty(difficulty) {
+    this.difficulty = difficulty;
+    console.log(difficulty);
   }
 
   selectCategory() {

@@ -54,10 +54,10 @@ export class TriviaApiService {
     hard: "hard"
   }
 
-  getFilteredTrivia(category: string, difficult: string) {
+  getFilteredTrivia(category: any) {
     console.log(category);
     return this.http.get(
-      `${this.baseFilterUrl}&category=${this.categories[category]}&difficulty=${this.difficulty[difficult]}&type=multiple`
+      `${this.baseFilterUrl}&category=${category.category}&difficulty=${category.difficulty}&type=multiple`
     );
   }
 }

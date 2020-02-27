@@ -1,39 +1,24 @@
 <body>
-  <header>
-    <div [(ngModel)]="category" (change)="selectCategory()">
+  <header *ngIf="quizSetup">
+    <div>
       <h1>Select Category</h1>
-      <button value="history">History</button>
-      <button value="sports">Sports</button>
-      <button value="animals">Animals</button>
-      <button value="videoGames">Video Games</button>
+      <button value="history" (click)="setCategory('23')">History</button>
+      <button value="sports" (click)="setCategory('21')">Sports</button>
+      <button value="animals" (click)="setCategory('27')">Animals</button>
+      <button value="videoGames" (click)="setCategory('15')">
+        Video Games
+      </button>
     </div>
     <div>
-        <h1>Select Difficulty</h1>
-        <button value="easy">Easy</button>
-        <button value="medium">Medium</button>
-        <button value="hard">Hard</button>
-      </div>
-      <button (click)="selectCategory(category, difficulty)">Submit</button>
-
-  
-    <!-- <select [(ngModel)]="category">
-        <option value="history">History</option>
-        <option value="sports">Sports</option>
-        <option value="animals">Animals</option>
-        <option value="videoGames">Video Games</option>
-      </select>
-
-      <label class="dropdown">
-        <select class="dropdownMenu" [(ngModel)]="difficulty">
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </label> -->
-
+      <h1>Select Difficulty</h1>
+      <button value="easy" (click)="setDifficulty('easy')">Easy</button>
+      <button value="medium" (click)="setDifficulty('medium')">Medium</button>
+      <button value="hard" (click)="setDifficulty('hard')">Hard</button>
+    </div>
+    <button (click)="selectCategory(category, difficulty)" (click)="startQuiz()">Submit</button>
   </header>
   <main *ngIf="quizReady">
-      <question></question>
-      <answers></answers>
+    <question [questions]="questions"></question>
+    <answers [correctAnswers]="correctAnswers" [incorrectAnswers]="incorrectAnswers"></answers>
   </main>
 </body>

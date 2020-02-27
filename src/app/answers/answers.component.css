@@ -1,0 +1,5 @@
+button {
+    display: flex;
+    width: fit-content;
+    color: red;
+}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'answers',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnswersComponent implements OnInit {
 
+  index = 0;
+
+  @Input() incorrectAnswers: any; 
+  @Input() correctAnswers: any; 
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.correctAnswers);
+    console.log(this.incorrectAnswers);
   }
 
 }

@@ -1,2 +1,6 @@
-
-<home (onSelectCategory)="fetchAPI($event, $event)"></home>
+<home 
+    (onSelectCategory)="fetchAPI($event)"   
+    [questions]="questions" 
+    [correctAnswers]="correctAnswers" 
+    [incorrectAnswers]="incorrectAnswers"
+></home>
