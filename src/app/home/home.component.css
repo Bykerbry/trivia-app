@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+   flex-direction: column;
+
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+button {
+    margin: 10px;
+    width: 100px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: aqua;
+}

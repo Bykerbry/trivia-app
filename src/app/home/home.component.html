@@ -1,0 +1,39 @@
+<body>
+  <header>
+    <div [(ngModel)]="category" (change)="selectCategory()">
+      <h1>Select Category</h1>
+      <button value="history">History</button>
+      <button value="sports">Sports</button>
+      <button value="animals">Animals</button>
+      <button value="videoGames">Video Games</button>
+    </div>
+    <div>
+        <h1>Select Difficulty</h1>
+        <button value="easy">Easy</button>
+        <button value="medium">Medium</button>
+        <button value="hard">Hard</button>
+      </div>
+      <button (click)="selectCategory(category, difficulty)">Submit</button>
+
+  
+    <!-- <select [(ngModel)]="category">
+        <option value="history">History</option>
+        <option value="sports">Sports</option>
+        <option value="animals">Animals</option>
+        <option value="videoGames">Video Games</option>
+      </select>
+
+      <label class="dropdown">
+        <select class="dropdownMenu" [(ngModel)]="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label> -->
+
+  </header>
+  <main *ngIf="quizReady">
+      <question></question>
+      <answers></answers>
+  </main>
+</body>

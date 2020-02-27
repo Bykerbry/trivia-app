@@ -2,21 +2,29 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TriviaApiService } from '../trivia-api.service';
 
 @Component({
-  selector: 'question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-
-export class QuestionComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   constructor(private TriviaApiService: TriviaApiService) { }
 
+  quizSetup: boolean = true;
+  quizReady: boolean = false;
   category: string = 'history';
   difficulty: string = 'easy';
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
-  
+
   ngOnInit() {
+  }
+
+  // displays questions and answers
+  startQuiz() {
+    this.quizReady = true;
+    this.quizSetup = false;
+    return
   }
 
   selectCategory() {
