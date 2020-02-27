@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -9,10 +9,14 @@ import { AppComponent } from '../app.component';
 export class AnswersComponent implements OnInit {
 
   toggle = true;
-  index: number;
+  revertBtn: boolean = false;
 
   @Input() incorrectAnswers: any; 
   @Input() correctAnswers: any; 
+
+  @Output() indexMinus = new EventEmitter<any>()
+  @Output() indexAdd = new EventEmitter<any>()
+  @Input() index;
 
   constructor() { }
 
@@ -23,6 +27,19 @@ export class AnswersComponent implements OnInit {
 
   resultBtn() {
     this.toggle = !this.toggle;
+  }
+
+  previousBtn() {
+    this.indexMinus.emit();
+    
+  }
+
+  nextBtn() {
+    this.indexAdd.emit();
+  }
+
+  revertBtn() {
+    this.revertBtn = true;
   }
 
 }

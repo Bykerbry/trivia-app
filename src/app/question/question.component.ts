@@ -14,7 +14,8 @@ export class QuestionComponent implements OnInit {
 
   category: string;
   difficulty: string;
-  index: number;
+  
+  @Input() index;
 
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
@@ -23,8 +24,6 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
     console.log(this.questions);
   }
-
-
 
   selectCategory() {
     this.onSelectCategory.emit(

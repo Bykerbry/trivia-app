@@ -57,3 +57,8 @@ button span {
     box-shadow: 0px 0px 15px 5px purple;
 
 }
+
+
+.selected {
+    border: 5px solid rgb(33, 33, 241);
+}

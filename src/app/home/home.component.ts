@@ -15,17 +15,20 @@ export class HomeComponent implements OnInit {
   category: string;
   difficulty: string;
   index: number = 0;
+  finalScore: boolean = false;
   
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
-  @Output() indexMinus = new EventEmitter<any>()
-  @Output() indexAdd = new EventEmitter<any>()
   
   @Input() questions: any;
   @Input() correctAnswers: any;
   @Input() incorrectAnswers: any;
 
   ngOnInit() {
+  }
+
+  finalScoreSet() {
+    this.finalScore = true;
   }
 
   // displays questions and answers
@@ -53,10 +56,20 @@ export class HomeComponent implements OnInit {
   }
 
   previousBtn() {
-    this.indexMinus.emit(this.index--)
+    if (this.index <= 0) {
+      prompt("Yikes")
+    } else {
+    this.index--;
+    }
   }
 
   nextBtn() {
-    this.indexAdd.emit(this.index++)
+    if (this.index == 9) {
+      this.finalScoreSet();
+    } else {
+      this.index++;
+    }
   }
+
+  
 }

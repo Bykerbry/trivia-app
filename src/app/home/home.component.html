@@ -19,7 +19,12 @@
     <button class="sub" (click)="selectCategory(category, difficulty)" (click)="startQuiz()">Start</button>
   </header>
   <main *ngIf="quizReady">
-    <question [questions]="questions"></question>
-    <answers [correctAnswers]="correctAnswers" [incorrectAnswers]="incorrectAnswers"></answers>
+    <question [questions]="questions" [index]="index"></question>
+    <answers (indexMinus)="previousBtn()" (indexAdd)="nextBtn()" [index]="index" [correctAnswers]="correctAnswers" [incorrectAnswers]="incorrectAnswers"></answers>
   </main>
+
+  <div *ngIf="finalScore" class="finalScoreScreen">
+    <h1 class="score">Your Score</h1>
+    <h3 class="actualScore">{{ score }}</h3>
+  </div>
 </body>

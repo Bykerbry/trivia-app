@@ -75,3 +75,34 @@ h1 {
     box-shadow: 0px 0px 15px 5px blue;
 
 }
+
+.finalScoreScreen {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: red;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(18,23,65);
+    font-size: 4rem;
+}
+
+.score {
+    color: white;
+    font-size: 8rem;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+
+.actualScore {
+    color: greenyellow;
+    font-size: 8rem;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+
+
