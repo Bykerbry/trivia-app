@@ -14,7 +14,8 @@ export class QuestionComponent implements OnInit {
 
   category: string;
   difficulty: string;
-  index = 0;
+  index: number;
+
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
   @Input() questions;
@@ -25,12 +26,12 @@ export class QuestionComponent implements OnInit {
 
 
 
-  // selectCategory() {
-  //   this.onSelectCategory.emit(
-  //     {
-  //       category: this.category,
-  //       difficulty: this.difficulty
-  //     });
+  selectCategory() {
+    this.onSelectCategory.emit(
+      {
+        category: this.category,
+        difficulty: this.difficulty
+      });
 
-  // }
+  }
 }

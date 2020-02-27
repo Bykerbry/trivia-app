@@ -8,8 +8,8 @@ import { AppComponent } from '../app.component';
 })
 export class AnswersComponent implements OnInit {
 
-  index = 0;
   toggle = true;
+  index: number;
 
   @Input() incorrectAnswers: any; 
   @Input() correctAnswers: any; 
@@ -21,9 +21,8 @@ export class AnswersComponent implements OnInit {
     console.log(this.incorrectAnswers);
   }
 
-  toggleBtn() {
+  resultBtn() {
     this.toggle = !this.toggle;
-    console.log(this.toggle)
   }
 
 }

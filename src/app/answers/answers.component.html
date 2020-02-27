@@ -1,21 +1,25 @@
 <div class="container">
     <button 
     [style.border]="toggle ? 'default' : '5px solid greenyellow'"
-    (click)="toggleBtn()"
+    (click)="resultBtn()"
     ><span>A </span> {{correctAnswers[index]}}</button>
 
     <button
     [style.border]="toggle ? 'default' : '5px solid red'"
-    (click)="toggleBtn()"
+    (click)="resultBtn()"
     ><span>B </span> {{incorrectAnswers[index][0]}}</button>
 
     <button     
     [style.border]="toggle ? 'default' : '5px solid red'"
-    (click)="toggleBtn()"
+    (click)="resultBtn()"
     ><span>C </span> {{incorrectAnswers[index][1]}}</button>
-    
+
     <button     
     [style.border]="toggle ? 'default' : '5px solid red'"
-    (click)="toggleBtn()"
+    (click)="resultBtn()"
     ><span>D </span> {{incorrectAnswers[index][2]}}</button>
+<div class="btn">
+    <button (click)="previousBt()" id="previous">Previous</button>
+    <button (click)="nextBtn()" id="next">Next</button>
+</div>
 </div>

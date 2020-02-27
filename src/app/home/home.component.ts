@@ -14,8 +14,12 @@ export class HomeComponent implements OnInit {
   quizReady: boolean = false;
   category: string;
   difficulty: string;
+  index: number = 0;
+  
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
+  @Output() indexMinus = new EventEmitter<any>()
+  @Output() indexAdd = new EventEmitter<any>()
   
   @Input() questions: any;
   @Input() correctAnswers: any;
@@ -46,6 +50,13 @@ export class HomeComponent implements OnInit {
         category: this.category, 
         difficulty: this.difficulty
       });
+  }
 
+  previousBtn() {
+    this.indexMinus.emit(this.index--)
+  }
+
+  nextBtn() {
+    this.indexAdd.emit(this.index++)
   }
 }
