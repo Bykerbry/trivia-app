@@ -9,6 +9,7 @@ import { AppComponent } from '../app.component';
 export class AnswersComponent implements OnInit {
 
   index = 0;
+  toggle = true;
 
   @Input() incorrectAnswers: any; 
   @Input() correctAnswers: any; 
@@ -18,6 +19,11 @@ export class AnswersComponent implements OnInit {
   ngOnInit() {
     console.log(this.correctAnswers);
     console.log(this.incorrectAnswers);
+  }
+
+  toggleBtn() {
+    this.toggle = !this.toggle;
+    console.log(this.toggle)
   }
 
 }

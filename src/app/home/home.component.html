@@ -1,21 +1,22 @@
 <body>
   <header *ngIf="quizSetup">
-    <div>
+    <h1 class="logo">TRIVIA</h1>
+    <div class="category">
       <h1>Select Category</h1>
-      <button value="history" (click)="setCategory('23')">History</button>
-      <button value="sports" (click)="setCategory('21')">Sports</button>
-      <button value="animals" (click)="setCategory('27')">Animals</button>
-      <button value="videoGames" (click)="setCategory('15')">
+      <button class="cat" value="history" (click)="setCategory('23')">History</button>
+      <button class="cat" value="sports" (click)="setCategory('21')">Sports</button>
+      <button class="cat" value="animals" (click)="setCategory('27')">Animals</button>
+      <button class="cat" value="videoGames" (click)="setCategory('15')">
         Video Games
       </button>
     </div>
-    <div>
+    <div class="difficulty">
       <h1>Select Difficulty</h1>
-      <button value="easy" (click)="setDifficulty('easy')">Easy</button>
-      <button value="medium" (click)="setDifficulty('medium')">Medium</button>
-      <button value="hard" (click)="setDifficulty('hard')">Hard</button>
+      <button class="dif" value="easy" (click)="setDifficulty('easy')">Easy</button>
+      <button class="dif" value="medium" (click)="setDifficulty('medium')">Medium</button>
+      <button class="dif" value="hard" (click)="setDifficulty('hard')">Hard</button>
     </div>
-    <button (click)="selectCategory(category, difficulty)" (click)="startQuiz()">Submit</button>
+    <button class="sub" (click)="selectCategory(category, difficulty)" (click)="startQuiz()">Start</button>
   </header>
   <main *ngIf="quizReady">
     <question [questions]="questions"></question>

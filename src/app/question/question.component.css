@@ -1,18 +1,5 @@
-.wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+h1 {
+    color: white;
+    margin-bottom: 100px;
+    text-align: center;
 }
-
-.dropdown {
-    padding-right: 20px;
-}
-
-.dropdownMenu {
-    border: 1px solid black;
-    width: fit-content;
-    height: fit-content;
-    font-size: 2rem;
-    font-family: sans-serif;
-}
-
