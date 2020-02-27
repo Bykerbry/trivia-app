@@ -9,31 +9,22 @@ import { TriviaApiService } from '../trivia-api.service';
 
 export class QuestionComponent implements OnInit {
 
-  @Output() history = new EventEmitter();
-  @Output() sports = new EventEmitter();
-  @Output() animals = new EventEmitter();
-  @Output() videoGames = new EventEmitter();
-
-  @Output() easy = new EventEmitter();
-  @Output() medium = new EventEmitter();
-  @Output() hard = new EventEmitter();
-
   constructor(private TriviaApiService: TriviaApiService) { }
 
-  category : string;
-  difficulty : string;
-  onSelectCategory : any;
-  onSelectDifficulty : any;
+  category: string = 'history';
+  difficulty: string = 'easy';
+  @Output() onSelectCategory = new EventEmitter<any>()
+  @Output() onSelectDifficulty = new EventEmitter<any>()
   
   ngOnInit() {
   }
 
   selectCategory() {
-    this.onSelectCategory.emit(this.category);
-  }
-
-  selectDifficulty() {
-    this.onSelectDifficulty.emit(this.difficulty);
+    this.onSelectCategory.emit(
+      {
+        category: this.category, 
+        difficulty: this.difficulty
+      });
 
   }
 }

@@ -1,35 +1,19 @@
 <div class="wrapper">
     <div class="category">
+      <label class="dropdown">
+        <select class="dropdownMenu">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
         <label class="dropdown">
-            <div class="dropdownBtn">
-                Categories
-            </div>
-            <input type="checkbox" class="dropdownInput" id="test">
-            <select [(ngModel)]="category" (change)="selectCategory()" class="dropdownMenu">
+            <select class="dropdownMenu" [(ngModel)]="category" (change)="selectCategory()">
               <option value="history">History</option>
               <option value="sports">Sports</option>
               <option value="animals">Animals</option>
               <option value="videoGames">Video Games</option>
             </select>
           </label>
-          <label class="dropdown">
-            <div class="dropdownBtn">
-                Difficulty
-            </div>
-            <input type="checkbox" class="dropdownInput" id="test">
-            <select class="dropdownMenu" [(ngModel)]="difficulty">
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select >
-          </label>
-    </div>
-
-    <div class="question">
-        <h2>Question:</h2>
-        <h3>here</h3>
-    </div>
-    <div class="score">
-        <span class="current">0/10</span>
     </div>
 </div>
