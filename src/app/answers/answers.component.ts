@@ -36,9 +36,6 @@ export class AnswersComponent implements OnInit {
 
   nextBtn() {
     this.indexAdd.emit();
-  }
-
-  revertBtn() {
     this.revertBtn = true;
   }
 
