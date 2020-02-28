@@ -1,29 +1,28 @@
 <div class="container">
     <button 
-    [style.border]="toggle ? 'default' : '5px solid greenyellow'"
+    [style.border]="toggle ? (btnClicked ? 'default' : '5px solid blue') : '5px solid greenyellow'"
     (click)="resultBtn()"
-    (click)="correctScore()"
-    ><span>A </span> {{correctAnswers[index]}}</button>
+    >{{answers[index]}}</button>
 
     <button
-    [style.border]="toggle ? 'default' : '5px solid red'"
+    [style.border]="toggle ? (btnClicked ? 'default' : '5px solid blue') : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>B </span> {{incorrectAnswers[index][0]}}</button>
+    >{{answers[index][0]}}</button>
 
     <button     
-    [style.border]="toggle ? 'default' : '5px solid red'"
+    [style.border]="toggle ? (btnClicked ? 'default' : '5px solid blue') : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>C </span> {{incorrectAnswers[index][1]}}</button>
+    >{{answers[index][1]}}</button>
 
     <button     
-    [style.border]="toggle ? 'default' : '5px solid red'"
+    [style.border]="toggle ? (btnClicked ? 'default' : '5px solid blue') : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>D </span> {{incorrectAnswers[index][2]}}</button>
+    >{{answers[index][2]}}</button>
 <div class="btn">
-    <button (click)="previousBtn()" [ngClass]="{'selected': revertBtn}" id="previous">Previous</button>
-    <button (click)="nextBtn()" [ngClass]="{'selected': revertBtn}" id="next">Next</button>
+    <button (click)="previousBtn()" id="previous">Previous</button>
+    <button (click)="nextBtn()" id="next">Next</button>
 </div>
 </div>
