@@ -13,16 +13,18 @@ export class AnswersComponent implements OnInit {
 
   @Input() incorrectAnswers: any; 
   @Input() correctAnswers: any; 
+  @Input() index: number;
+  @Input() answers: any[]; 
 
   @Output() indexMinus = new EventEmitter<any>()
   @Output() indexAdd = new EventEmitter<any>()
-  @Input() index;
+  // @Input() index;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.correctAnswers);
-    console.log(this.incorrectAnswers);
+    console.log(this.answers, 'after');
+    console.log(this.index);
   }
 
   resultBtn() {
@@ -37,6 +39,7 @@ export class AnswersComponent implements OnInit {
   nextBtn() {
     this.indexAdd.emit();
     this.revertBtn = true;
+    console.log("hello");
   }
 
 }

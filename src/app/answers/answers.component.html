@@ -3,27 +3,28 @@
     [style.border]="toggle ? 'default' : '5px solid greenyellow'"
     (click)="resultBtn()"
     (click)="correctScore()"
-    ><span>A </span> {{correctAnswers[index]}}</button>
+    ><span>A </span> {{answers[index][0].answer}}</button>
 
     <button
     [style.border]="toggle ? 'default' : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>B </span> {{incorrectAnswers[index][0]}}</button>
+    ><span>B </span> {{answers[index][1].answer}}</button>
 
     <button     
     [style.border]="toggle ? 'default' : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>C </span> {{incorrectAnswers[index][1]}}</button>
+    ><span>C </span> {{answers[index][2].answer}}</button>
 
     <button     
     [style.border]="toggle ? 'default' : '5px solid red'"
     (click)="resultBtn()"
     (click)="incorrectScore()"
-    ><span>D </span> {{incorrectAnswers[index][2]}}</button>
+    ><span>D </span> {{answers[index][3].answer}}</button>
 <div class="btn">
     <button (click)="previousBtn()" [ngClass]="{'selected': revertBtn}" id="previous">Previous</button>
     <button (click)="nextBtn()" [ngClass]="{'selected': revertBtn}" id="next">Next</button>
 </div>
 </div>
+
