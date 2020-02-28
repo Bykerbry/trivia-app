@@ -9,7 +9,7 @@ import { AppComponent } from '../app.component';
 export class AnswersComponent implements OnInit {
 
   toggle = true;
-  revertBtn: boolean = false;
+  btnClicked = true;
 
   @Input() incorrectAnswers: any; 
   @Input() correctAnswers: any; 
@@ -28,18 +28,23 @@ export class AnswersComponent implements OnInit {
   }
 
   resultBtn() {
-    this.toggle = !this.toggle;
+    this.toggle = false;
   }
 
   previousBtn() {
     this.indexMinus.emit();
-    
   }
 
   nextBtn() {
     this.indexAdd.emit();
+<<<<<<< HEAD
     this.revertBtn = true;
     console.log("hello");
+=======
+    this.toggle = true;
+    this.btnClicked = false;
+    
+>>>>>>> 2c1d46e14b2fba563a640ff09a419ee19eacc24f
   }
 
 }
