@@ -16,10 +16,10 @@
       <button class="dif" value="medium" (click)="setDifficulty('medium')">Medium</button>
       <button class="dif" value="hard" (click)="setDifficulty('hard')">Hard</button>
     </div>
-    <button class="sub" (click)="selectCategory(category, difficulty)" (click)="startQuiz()">Start</button>
+    <button class="sub" (click)="selectCategory()" (click)="startQuiz()">Start</button>
   </header>
   <main *ngIf="quizReady">
-    <question [questions]="questions"></question>
-    <answers [correctAnswers]="correctAnswers" [incorrectAnswers]="incorrectAnswers"></answers>
+    <question [index]='index' [questions]="questions"></question>
+    <answers [index]='index' [answers]='answers'></answers>
   </main>
 </body>

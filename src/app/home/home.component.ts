@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { TriviaApiService } from '../trivia-api.service';
 
 @Component({
   selector: 'home',
@@ -8,7 +7,7 @@ import { TriviaApiService } from '../trivia-api.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private TriviaApiService: TriviaApiService) { }
+  constructor() { }
 
   quizSetup: boolean = true;
   quizReady: boolean = false;
@@ -18,21 +17,24 @@ export class HomeComponent implements OnInit {
   
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
-  @Output() indexMinus = new EventEmitter<any>()
-  @Output() indexAdd = new EventEmitter<any>()
+  // @Output() indexMinus = new EventEmitter<any>()
+  // @Output() indexAdd = new EventEmitter<any>()
   
   @Input() questions: any;
-  @Input() correctAnswers: any;
-  @Input() incorrectAnswers: any;
+  @Input() answers: any;
+  // @Input() correctAnswers: any;
+  // @Input() incorrectAnswers: any;
 
   ngOnInit() {
+    
   }
 
   // displays questions and answers
   startQuiz() {
-    this.quizReady = true;
-    this.quizSetup = false;
-    return
+    if (this.category && this.difficulty) {
+      this.quizReady = true;
+      this.quizSetup = false;
+    }
   }
   setCategory(category) {
     this.category = category;
@@ -53,10 +55,14 @@ export class HomeComponent implements OnInit {
   }
 
   previousBtn() {
-    this.indexMinus.emit(this.index--)
+    this.index--
+    // this.indexMinus.emit(this.index--)
   }
 
   nextBtn() {
-    this.indexAdd.emit(this.index++)
+    if(this.index > 0) {
+      this.index++
+    }
+    // this.indexAdd.emit(this.index++)
   }
 }

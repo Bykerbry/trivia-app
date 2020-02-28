@@ -10,21 +10,19 @@ import { AppComponent } from '../app.component';
 
 export class QuestionComponent implements OnInit {
 
-  constructor(private TriviaApiService: TriviaApiService) { }
+  constructor() { }
 
   category: string;
   difficulty: string;
-  index: number;
 
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
   @Input() questions;
+  @Input() index: number;
 
   ngOnInit() {
     console.log(this.questions);
   }
-
-
 
   selectCategory() {
     this.onSelectCategory.emit(
@@ -32,6 +30,5 @@ export class QuestionComponent implements OnInit {
         category: this.category,
         difficulty: this.difficulty
       });
-
   }
 }

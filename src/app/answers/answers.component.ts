@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'answers',
@@ -9,20 +8,19 @@ import { AppComponent } from '../app.component';
 export class AnswersComponent implements OnInit {
 
   toggle = true;
-  index: number;
-
-  @Input() incorrectAnswers: any; 
-  @Input() correctAnswers: any; 
+  @Input() index: number;
+  @Input() answers: any[]; 
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.correctAnswers);
-    console.log(this.incorrectAnswers);
+    console.log(this.answers, 'after');
+    console.log(this.index);
   }
 
   resultBtn() {
     this.toggle = !this.toggle;
   }
 
+  
 }
