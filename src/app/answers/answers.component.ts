@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IAnswer } from '../interfaces';
 
 @Component({
   selector: 'answers',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class AnswersComponent implements OnInit {
 
   @Input() index: number;
-  @Input() answerSets: any[]; 
+  @Input() answerSets: IAnswer[][];
 
   @Output() onNextClicked = new EventEmitter<number>()
   @Output() onPrevClicked = new EventEmitter<number>()
@@ -33,6 +34,4 @@ export class AnswersComponent implements OnInit {
     this.onPrevClicked.emit()
     this.isAnswered = false;
   }
-
-  
 }

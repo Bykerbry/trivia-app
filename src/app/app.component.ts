@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TriviaApiService } from './trivia-api.service';
+import { ICategory, IAnswer } from './interfaces';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,17 +9,15 @@ import { TriviaApiService } from './trivia-api.service';
 })
 export class AppComponent {
   title = 'trivia-app';
-  array: any;
-  results: any;
-  questions: any = [];
-  answerSets: any = []
+  questions: string[] = [];
+  answerSets: IAnswer[][] = []
 
 
   constructor(public client: TriviaApiService) {
 
   }
 
-  fetchAPI(eventC) {
+  fetchAPI(eventC: ICategory) {
     this.client.getFilteredTrivia(eventC).subscribe((res: any) => {
       res.results.forEach((res: any) => {
 
@@ -50,7 +50,6 @@ export class AppComponent {
 
         this.answerSets.push(answerSet)
       })
-    
     });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { IAnswer, ICategory } from '../interfaces'
 
 @Component({
   selector: 'home',
@@ -15,11 +16,10 @@ export class HomeComponent implements OnInit {
   difficulty: string;
   index: number = 0;
 
-  @Input() questions: any;
-  @Input() answerSets: any;
+  @Input() questions: string[];
+  @Input() answerSets: IAnswer[][];
   
-  @Output() onSelectCategory = new EventEmitter<any>()
-  @Output() onSelectDifficulty = new EventEmitter<any>()
+  @Output() onSelectCategory = new EventEmitter<ICategory>()
 
   ngOnInit() {
     
@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit {
       this.quizSetup = false;
     }
   }
-  setCategory(category) {
+  setCategory(category: string) {
     this.category = category;
   }
 
-  setDifficulty(difficulty) {
+  setDifficulty(difficulty: string) {
     this.difficulty = difficulty;
   }
 

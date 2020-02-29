@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IAnswer } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-answer',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AnswerComponent implements OnInit {
 
-  @Input() answerSet;
+  @Input() answerSet: IAnswer[];
   @Input() isAnswered: boolean;
 
   @Output() onAnswered = new EventEmitter<boolean>()
