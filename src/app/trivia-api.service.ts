@@ -55,7 +55,6 @@ export class TriviaApiService {
   }
 
   getFilteredTrivia(category: any) {
-    console.log(category);
     return this.http.get(
       `${this.baseFilterUrl}&category=${category.category}&difficulty=${category.difficulty}&type=multiple`
     );

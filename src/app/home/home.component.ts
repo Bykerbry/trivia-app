@@ -14,16 +14,12 @@ export class HomeComponent implements OnInit {
   category: string;
   difficulty: string;
   index: number = 0;
+
+  @Input() questions: any;
+  @Input() answerSets: any;
   
   @Output() onSelectCategory = new EventEmitter<any>()
   @Output() onSelectDifficulty = new EventEmitter<any>()
-  // @Output() indexMinus = new EventEmitter<any>()
-  // @Output() indexAdd = new EventEmitter<any>()
-  
-  @Input() questions: any;
-  @Input() answers: any;
-  // @Input() correctAnswers: any;
-  // @Input() incorrectAnswers: any;
 
   ngOnInit() {
     
@@ -38,12 +34,10 @@ export class HomeComponent implements OnInit {
   }
   setCategory(category) {
     this.category = category;
-    console.log(category);
   }
 
   setDifficulty(difficulty) {
     this.difficulty = difficulty;
-    console.log(difficulty);
   }
 
   selectCategory() {
@@ -54,15 +48,18 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  previousBtn() {
-    this.index--
-    // this.indexMinus.emit(this.index--)
-  }
-
-  nextBtn() {
-    if(this.index > 0) {
+  onClickedNext(){
+    if(this.index < 9) {
       this.index++
+    } else {
+      // Display Score
     }
-    // this.indexAdd.emit(this.index++)
+    console.log(this.index, 'from home');
+  }
+  onClickedPrev() {
+    if (this.index > 0 ) {
+      this.index--
+    }
+    console.log(this.index, 'from home');
   }
 }

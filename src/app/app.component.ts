@@ -10,9 +10,7 @@ export class AppComponent {
   array: any;
   results: any;
   questions: any = [];
-  // incorrectAnswers: any = [];
-  // correctAnswers: any = [];
-  answers: any = []
+  answerSets: any = []
 
 
   constructor(public client: TriviaApiService) {
@@ -24,6 +22,8 @@ export class AppComponent {
       res.results.forEach((res: any) => {
 
         this.questions.push(res.question);
+
+        let charCode = 97;
 
         const incorrect = res.incorrect_answers.map(answer => {
           return {
@@ -40,15 +40,15 @@ export class AppComponent {
         let answerSet = [...incorrect, correct];
         answerSet = answerSet.map(i => JSON.stringify(i))
 
-        
         for (let i = answerSet.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [answerSet[i], answerSet[j]] = [answerSet[j], answerSet[i]];
         }
 
         answerSet = answerSet.map(i => JSON.parse(i))
+        answerSet.map(i => i.option = String.fromCharCode(charCode++).toUpperCase())
 
-        this.answers.push(answerSet)
+        this.answerSets.push(answerSet)
       })
     
     });

@@ -7,14 +7,16 @@ import { HomeComponent } from './home/home.component';
 import { AnswersComponent } from './answers/answers.component';
 import { QuestionComponent } from './question/question.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AnswerComponent } from './answers/answer/answer.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionComponent,
     HomeComponent,
-    AnswersComponent
+    AnswersComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,

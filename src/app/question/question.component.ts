@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { TriviaApiService } from '../trivia-api.service';
-import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'question',
@@ -16,12 +14,10 @@ export class QuestionComponent implements OnInit {
   difficulty: string;
 
   @Output() onSelectCategory = new EventEmitter<any>()
-  @Output() onSelectDifficulty = new EventEmitter<any>()
   @Input() questions;
   @Input() index: number;
 
   ngOnInit() {
-    console.log(this.questions);
   }
 
   selectCategory() {

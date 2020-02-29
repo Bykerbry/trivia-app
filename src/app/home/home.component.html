@@ -20,6 +20,6 @@
   </header>
   <main *ngIf="quizReady">
     <question [index]='index' [questions]="questions"></question>
-    <answers [index]='index' [answers]='answers'></answers>
+    <answers (onPrevClicked)='onClickedPrev()' (onNextClicked)='onClickedNext()' [index]='index' [answerSets]='answerSets'></answers>
   </main>
 </body>

@@ -1,0 +1,27 @@
+button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    width: 90vw;
+    font-size: 1.5rem;
+    border: 5px solid rgb(33, 33, 241);
+    border-radius: 20px;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    -webkit-box-shadow: 0px 0px 15px 5px blue; 
+    box-shadow: 0px 0px 15px 5px blue;
+    margin-bottom: 20px;
+    outline: none;
+}
+button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: brown;
+    margin-right: 20px;
+    background-color: rgb(104, 104, 104);
+}

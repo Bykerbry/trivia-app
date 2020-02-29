@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'answers',
@@ -7,19 +7,31 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AnswersComponent implements OnInit {
 
-  toggle = true;
   @Input() index: number;
-  @Input() answers: any[]; 
+  @Input() answerSets: any[]; 
+
+  @Output() onNextClicked = new EventEmitter<number>()
+  @Output() onPrevClicked = new EventEmitter<number>()
+  isAnswered: boolean;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.answers, 'after');
     console.log(this.index);
   }
 
-  resultBtn() {
-    this.toggle = !this.toggle;
+  onQuestionAnswered() {
+    this.isAnswered = true;
+  }
+
+  nextBtn() {
+    this.onNextClicked.emit()
+    this.isAnswered = false;
+  }
+
+  previousBtn() {
+    this.onPrevClicked.emit()
+    this.isAnswered = false;
   }
 
   
