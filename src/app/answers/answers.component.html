@@ -1,13 +1,13 @@
 <div class="container">
-    <app-answer 
-        (onAnswered)='onQuestionAnswered()' 
-        [answerSet]='answerSets[index]' 
-        [isAnswered]='isAnswered'>
-    </app-answer>
+  <app-answer
+    (onAnswered)="onQuestionAnswered()"
+    [answerSet]="answerSets[index]"
+    [isAnswered]="isAnswered"
+  >
+  </app-answer>
 
-    <div class="btn">
-        <button (click)="previousBtn()" id="previous">Previous</button>
-        <button (click)="nextBtn()" id="next">Next</button>
-    </div>
+  <div class="btn">
+    <button (click)="previousBtn()" id="previous">Previous</button>
+    <button (click)="nextBtn()" id="next">Next</button>
+  </div>
 </div>
-

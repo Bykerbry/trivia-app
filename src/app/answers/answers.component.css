@@ -1,59 +1,66 @@
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 button {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    width: 90vw;
-    font-size: 1.5rem;
-    border: 5px solid rgb(33, 33, 241);
-    border-radius: 20px;
-    padding: 10px;
-    background-color: transparent;
-    color: white;
-    -webkit-box-shadow: 0px 0px 15px 5px blue; 
-    box-shadow: 0px 0px 15px 5px blue;
-    margin-bottom: 20px;
-    outline: none;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  width: 90vw;
+  font-size: 1.5rem;
+  border: 5px solid rgb(33, 33, 241);
+  border-radius: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  -webkit-box-shadow: 0px 0px 15px 5px blue;
+  box-shadow: 0px 0px 15px 5px blue;
+  margin-bottom: 20px;
+  outline: none;
 }
 
 button span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    background-color: brown;
-    margin-right: 20px;
-    background-color: rgb(104, 104, 104);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: brown;
+  margin-right: 20px;
+  background-color: rgb(104, 104, 104);
 }
 
 .btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 #previous {
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-    margin-top: 20px;
-    border: 5px solid purple;
-    -webkit-box-shadow: 0px 0px 15px 5px purple; 
-    box-shadow: 0px 0px 15px 5px purple;
-
+  display: flex;
+  justify-content: center;
+  width: 20vw;
+  margin-top: 20px;
+  border: 5px solid purple;
+  -webkit-box-shadow: 0px 0px 15px 5px purple;
+  box-shadow: 0px 0px 15px 5px purple;
 }
 
 #next {
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-    margin-top: 20px;
-    border: 5px solid purple;
-    -webkit-box-shadow: 0px 0px 15px 5px purple; 
-    box-shadow: 0px 0px 15px 5px purple;
-
+  display: flex;
+  justify-content: center;
+  width: 20vw;
+  margin-top: 20px;
+  border: 5px solid purple;
+  -webkit-box-shadow: 0px 0px 15px 5px purple;
+  box-shadow: 0px 0px 15px 5px purple;
+}
+.submit {
+  display: flex;
+  justify-content: center;
+  width: 20vw;
+  margin-top: 20px;
+  border: 5px solid purple;
+  -webkit-box-shadow: 0px 0px 15px 5px purple;
+  box-shadow: 0px 0px 15px 5px purple;
 }

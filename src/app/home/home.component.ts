@@ -12,17 +12,18 @@ export class HomeComponent implements OnInit {
 
   quizSetup: boolean = true;
   quizReady: boolean = false;
+  showScore: boolean = false;
   category: string;
   difficulty: string;
   index: number = 0;
 
   @Input() questions: string[];
   @Input() answerSets: IAnswer[][];
-  
+
   @Output() onSelectCategory = new EventEmitter<ICategory>()
 
   ngOnInit() {
-    
+
   }
 
   // displays questions and answers
@@ -43,21 +44,23 @@ export class HomeComponent implements OnInit {
   selectCategory() {
     this.onSelectCategory.emit(
       {
-        category: this.category, 
+        category: this.category,
         difficulty: this.difficulty
       });
   }
 
-  onClickedNext(){
-    if(this.index < 9) {
+  onClickedNext() {
+    if (this.index <= 9) {
       this.index++
-    } else {
+    } 
+    if (this.index > 9) {
       // Display Score
+      this.showScore = true;
     }
     console.log(this.index, 'from home');
   }
   onClickedPrev() {
-    if (this.index > 0 ) {
+    if (this.index > 0) {
       this.index--
     }
     console.log(this.index, 'from home');
