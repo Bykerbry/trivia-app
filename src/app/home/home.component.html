@@ -23,11 +23,11 @@
   <main *ngIf="quizReady">
     <h1 class="questionCount" *ngIf="true">{{index+1}}/10</h1>
     <question [index]='index' [questions]="questions"></question>
-    <answers (onPrevClicked)='onClickedPrev()' (onNextClicked)='onClickedNext()' [index]='index' [answerSets]='answerSets'></answers>
+    <answers (onPrevClicked)='onClickedPrev()' (onNextClicked)='onClickedNext()' [index]='index' [answerSets]='answerSets' (correctScore)="answerSelected($event)"></answers>
   </main>
   <div *ngIf="showScore" class="finalScore">
     <h1>Your Score</h1>
-    <h2>(Score goes here)</h2>
-    <button onClick="window.location.reload();" class="refreshBtn">Start Fresh?</button>
+    <h2>{{score}}/10</h2>
+    <button onClick="window.location.reload();" class="refreshBtn">Restart</button>
   </div>
 </body>

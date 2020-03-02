@@ -13,6 +13,8 @@ export class AnswersComponent implements OnInit {
 
   @Output() onNextClicked = new EventEmitter<number>()
   @Output() onPrevClicked = new EventEmitter<number>()
+  @Output() correctScore = new EventEmitter<number>()
+
   isAnswered: boolean;
 
   constructor() { }
@@ -33,5 +35,9 @@ export class AnswersComponent implements OnInit {
   previousBtn() {
     this.onPrevClicked.emit()
     this.isAnswered = false;
+  }
+
+  answerSelected(correct) {
+    this.correctScore.emit(correct)
   }
 }

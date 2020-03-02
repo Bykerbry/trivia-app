@@ -19,12 +19,15 @@ export class HomeComponent implements OnInit {
 
   @Input() questions: string[];
   @Input() answerSets: IAnswer[][];
+  
 
   @Output() onSelectCategory = new EventEmitter<ICategory>()
 
   ngOnInit() {
 
   }
+
+  score: number = 0;
 
   // displays questions and answers
   startQuiz() {
@@ -64,5 +67,10 @@ export class HomeComponent implements OnInit {
       this.index--
     }
     console.log(this.index, 'from home');
+  }
+
+  answerSelected(correct) {
+    this.score = correct; 
+
   }
 }

@@ -3,6 +3,7 @@
     (onAnswered)="onQuestionAnswered()"
     [answerSet]="answerSets[index]"
     [isAnswered]="isAnswered"
+    (addToCorrect)="answerSelected($event)"
   >
   </app-answer>
 

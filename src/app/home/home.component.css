@@ -49,10 +49,14 @@ header {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: black;
+  background-color: rgb(18,23,65);
   color: red;
   font-size: 3rem;
+  color: white;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.5);
 }
+
 .refreshBtn {
   width: 30%;
   height: 8%;
